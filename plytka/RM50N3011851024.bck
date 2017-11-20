@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FINDER-32.21-x000
+D FINDER 32.21-x000, Single Pole Relay, 6A
+K Single Pole Relay
+F https://gfinder.findernet.com/assets/Series/355/S32EN.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,17 @@
+﻿
+28.08.2017
+Stworzono kosztorys i przedstawiono możliwości poszczególnych opcji
+https://docs.google.com/spreadsheets/d/1p8hhDZW8lbqAhx8IgQiYeKqlR8a70tTErFYbnvJqX3U/edit#gid=0
+
+19.08.2017
+Zapoznano się ze szegółową specyfikacją. Stworzono zgrubny kosztorys i plan pracy
+pomysły: 
+-strzałki oznaczające kierunech ruchu windy
+-informacja zwrotna dla kucharza w przypadku pomyłki.
+
+pytania:
+Jak sterujemy windą? 
+potrzebna izolacja galwaniczna? 
+Jakie mamy sygnały z windy?
+Jakie zasilanie? 230? 24? czy można uzywac zasilani, ktore juz jest?
+Albo 3 sbc+switch-> krótszy czas developmentu, albo tylko 3 sbc ->dłuższy czas developmentu.

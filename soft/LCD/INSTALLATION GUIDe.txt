@@ -1,0 +1,70 @@
+
+
+https://www.waveshare.com/10.1inch-hdmi-lcd.htm
+
+https://www.waveshare.com/wiki/10.1inch_HDMI_LCD
+
+4) Append the following lines to the config.txt file which is located in the root of the card:
+max_usb_current=1
+hdmi_group=2
+hdmi_mode=87 
+hdmi_cvt 1024 600 60 6 0 0 0
+display_rotate=2
+
+* add file named ssh in same directory
+
+
+* http://www.waveshare.com/w/upload/0/00/LCD-show-170703.tar.gz
+
+
+*dla połaczenia bez ssh:
+ssh-keygen
+ssh-copy-id pi@192.168.1.156
+ssh pi@192.168.1.156
+exit
+
+5) The LCD will display after booting up. Then open a terminal to install the touch driver which can be found in the /boot/ directory.
+cd ~
+tar xzvf /boot/LCD-show-*.tar.gz  
+cd LCD-show/
+chmod +x LCD101-1024x600-show
+./LCD101-1024x600-show
+
+
+*wirtualna klawiatura:
+
+
+sudo apt-get update
+An upgrade to the whole system isn't needed but it is recommended:
+
+sudo apt-get upgrade
+Now we can install the virtual keyboard:
+
+sudo apt-get install matchbox-keyboard
+Rebooting is recommended:
+
+sudo reboot
+
+
+*tutorial do cross kompilacji:
+
+https://wiki.qt.io/Raspberry_Pi_Beginners_Guide
+
+!!!! Gdyby ewyszedł error: 
+"rsync error: some files/attrs were not transferred 
+(see previous errors) (code 23) at main.c(1655) [generator=3.1.1]"
+Należy na raspberry napisac
+
+sudo chmod u+r /usr/lib/cups/backend/vnc 
+i ponowic rsync
+
+
+./configure -release -opengl es2 -device linux-rasp-pi3-g++ -device-option CROSS_COMPILE=~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf- -sysroot ~/raspi/sysroot -confirm-license -make libs -prefix /usr/local/qt5pi -extprefix ~/raspi/qt5pi -hostprefix ~/raspi/qt5 -v -no-use-gold-linker
+
+
+dla 32 bitow????
+sudo apt-get install lib32z1-dev
+
+./configure -release -opengl es2 -device linux-rasp-pi3-g++ -device-option CROSS_COMPILE=~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- -sysroot ~/raspi/sysroot -opensource -confirm-license -make libs -prefix /usr/local/qt5pi -extprefix ~/raspi/qt5pi -hostprefix ~/raspi/qt5 -v -no-use-gold-linker
+
+

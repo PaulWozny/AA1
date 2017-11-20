@@ -1,0 +1,261 @@
+
+Win:Sciągamy Raspbiana i etchera. wypalamy kartę SD obrazem raspbiana.
+
+Win: Instalujemy Wirtual Boxa, tworzymy nową wirtualkę, sciągamy obraz Ubuntu i go instalujemy. 
+Win: Instalujemy obraz z "dodatkami gościa": Urządzenia ->zamontuj obraz płyty ...
+
+Win: Właczamy schowek dwukierunkowy: Urządzenia -> Wspólny schowek -> schowek dwukierunkowy
+uruchamiamy ponownie virtualkę. Teraz możemy kopiować z Windowsa do wirtualki.
+kopiuj: ctrl+shift+c  wklej: ctrl+shift+v
+
+Win: Dodajemy do katalogou "boot" na karcie SD plik "LCD-show-170703.tar.gz"
+Win: Dodajemy do katalogou "boot" na karcie SD plik "xinput-calibrator_0.7.5-1_armhf.tar"
+
+Win: Tworzymy plik tekstowy i nazywamy go "ssh" pamiętamy, żeby usunąć rozszerzenie.
+
+Win: Dodajemy do na koniec pliku "config.txt" na karcie SD nasepujące linie:
+
+	max_usb_current=1
+	hdmi_group=2
+	hdmi_mode=87 
+	hdmi_cvt 1024 600 60 6 0 0 0
+	display_rotate=2
+
+Montujemy kartę SD do Raspberry pi 3 i go włączamy
+Podłączamy klawiaturę i myszkę.
+
+Powinien ukazać nam się pulpit. W prawym górym rogu jest symbol Bluetooth. 
+Koło niego jest symbol z "X". Naciskamy go. Pojawia się lista Wi-Fi. 
+Podłączamy sie do sieci. WAŻNE: Do tej samej sieci musi być połaczony komputer.
+Gdy najedziemy na ten symbol, ukaże się adress IP dla "wlan0". To adres IP Poziomki.
+
+VB: Włączamy terminal i wpisujemy:
+
+	ssh-keygen
+naciskamy ENTER 3 razy.
+	ssh-copy-id pi@Adres_IP_Z_POLA_WLAN0
+wpisujemy hasło: "raspberry"
+	ssh pi@192.168.1.156
+	
+VB: jesteśmy teraz zalogowani na raspberrego z poziomu Ubuntu.
+W pierwszej kolejności należy zmienic hasło do użytkownika "pi".
+W tym celu piszemy:
+	
+	passwd
+Piszemy stare hasło "raspberry"
+I dwukrotnie wpisujemy nowe hasło.
+
+
+VB: Wpisujemy następujące komendy:
+
+	tar xzvf /boot/LCD-show-*.tar.gz  
+	cd LCD-show/
+	chmod +x LCD101-1024x600-show
+	./LCD101-1024x600-show
+	
+Raspberry powinno się uruchomć ponownie. Touchpad powinnien już działać. 
+Teraz należy wprowadzić dane kalibracyjne:
+
+	tar -xvf /boot/xinput-calibrator_0.7.5-1_armhf.tar
+	sudo dpkg -i -B xinput-calibrator_0.7.5-1_armhf.deb
+	
+Rpi: Click the "Menu" button on the task bar, choose "Preference" -> "Calibrate Touchscreen".
+Pojawi się okno z z parametrami kalibracyjnymi.
+
+Rpi: Właczamy terminal i piszemy:
+	sudo mkdir /etc/X11/xorg.conf.d	
+	sudo nano /etc/X11/xorg.conf.d/99-calibration.conf
+	
+wklejamy kod z kalibracji ( od "Section" do "EndSection")
+Rpi: Naciskamy ctrl+shift+x, y, enter
+
+VB: resetujemy raspberry.
+
+	sudo reboot
+	
+Teraz touchpad powinien nam działać bez zarzutu.
+
+Rpi: 
+	sudo raspi-config
+	boot options -> Desktop/CLI -> Console Autologin
+	Advanced options -> Memory split -> 256
+	
+
+
+//////////////////////
+
+
+Instalacja toolchaina dla cross kompilacji.
+
+VB: Logujemy się za pomocą SSH na rpi
+
+VB:	aktualizujemy raspberrego:
+	sudo raspi-update
+	sudo reboot
+	
+[on RPi] Install a bunch of development files (for simplicity we use build-dep, not everything is really needed, but it is easier this way).
+Edit sources list in /etc/apt/sources.list with use of your favorite editor (nano / vi) and uncomment the deb-src line:	
+
+	sudo nano /etc/apt/sources.list
+	
+Update your system and install required libraries:
+	sudo apt-get update
+	sudo apt-get upgrade
+	
+	sudo apt-get build-dep qt4-x11
+	sudo apt-get build-dep libqt5gui5
+	sudo apt-get install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev libxcb-xinerama0
+	
+	
+[on RPi] Prepare our target directory
+	sudo mkdir /usr/local/qt5pi
+	sudo chown pi:pi /usr/local/qt5pi	
+	
+[on host PC] Create our working directory and get a toolchain:
+	mkdir ~/raspi
+	cd ~/raspi
+	sudo apt install git
+	git clone https://github.com/raspberrypi/tools
+	
+[on host PC] Create a sysroot. Using rsync we can properly keep things synchronized in the future as well. Replace raspberrypi.local with the address of the Pi.
+	mkdir sysroot sysroot/usr sysroot/opt
+	rsync -avz pi@raspberrypi.local:/lib sysroot
+	rsync -avz pi@raspberrypi.local:/usr/include sysroot/usr
+	
+	rsync -avz pi@raspberrypi.local:/usr/lib sysroot/usr
+Zapewnie wyjebał bład. Jeżeli go zignorujemy, to potem nie bedziemy mogli skompilować rpi
+Aby zobaczyc co dokładnie się stało, należy napisać:
+	rsync -avz pi@192.168.1.156:/usr/lib sysroot/usr | grep failed
+W moim przypadku bład to:
+	"rsync: send_files failed to open "/usr/lib/cups/backend/vnc": Permission denied"
+co oznacza, że musimy zmienic pozwolenia na rpi:
+Rpi: 
+	sudo chmod +w+r /usr/lib/cups/backend/vnc
+I wpisujemy jeszcze raz komendę na VB:
+	rsync -avz pi@192.168.1.156:/usr/lib sysroot/usr
+
+	
+	rsync -avz pi@raspberrypi.local:/opt/vc sysroot/opt
+	
+[on host PC] Adjust symlinks to be relative. Use provided script, because the old fixQualifiedLibraryPaths is not working properly:
+wget https://raw.githubusercontent.com/riscv/riscv-poky/master/scripts/sysroot-relativelinks.py
+chmod +x sysroot-relativelinks.py
+./sysroot-relativelinks.py sysroot	
+	
+
+Teraz bedziemy kompilowac toolchain dla cross kopmilacji.
+Sciagamy z gita wersję qtbase dla qt, ktorego sciaglismy (w moim przypadku 5.9.2)
+
+	git clone git://code.qt.io/qt/qtbase.git -b v5.9.2
+	
+	ch qtbase
+	git checkout -b v5.9.2
+
+Nalezy dodac biblioteki 32 bitowe( uzywamy 64bitowego systemu zeby skompilowac 32 bitowy program)	
+	sudo apt-get install lib32z1-dev
+	
+	./configure -release -opengl es2 -device linux-rasp-pi3-g++ \
+	-device-option CROSS_COMPILE=~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- \
+	-sysroot ~/raspi/sysroot -opensource -confirm-license -make libs -prefix /usr/local/qt5pi \
+	-extprefix ~/raspi/qt5pi -hostprefix ~/raspi/qt5 -v -no-use-gold-linker
+	
+	
+Mądrym krokiem teraz jest wyłączenie wirtualnej maszyny i zwiększenie liczby procesorów	
+	
+	make -jx
+x - ilosc rdzeni w komputrze
+
+	make install
+	
+[on host PC] Deploy Qt to the device. We simply sync everything from ~/raspi/qt5pi to the prefix we configured above.
+	cd ..
+	rsync -avz qt5pi pi@raspberrypi.local:/usr/local	
+	
+[on host PC] Build an example up to test if everything went well. After proper build, copy an executable to the device.
+	cd qtbase/examples/opengl/qopenglwidget
+	~/raspi/qt5/bin/qmake
+	make
+
+	scp qopenglwidget pi@raspberrypi.local:/home/pi	
+	
+[on RPi] Update the device to let the linker find the Qt libs:
+	echo /usr/local/qt5pi/lib | sudo tee /etc/ld.so.conf.d/00-qt5pi.conf
+	sudo ldconfig
+	
+	
+	
+[on RPi] Fix the EGL/GLES libraries. The device may have the Mesa version of libEGL and libGLESv2 in /usr/lib/arm-linux-gnueabihf, resulting Qt apps picking these instead of the real thing from /opt/vc/lib. This may be fine for X11 desktop apps not caring about OpenGL performance but is totally useless for windowing system-less, fullscreen embedded apps. You may want to save the originals somewhere, just in case.
+	sudo mv /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0 /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0_backup
+	sudo mv /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0 /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0_backup
+	sudo ln -s /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
+	sudo ln -s /opt/vc/lib/libGLESv2.so /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
+	
+	///////////////////////////////////
+	
+	
+	//OGARNIECIE TOUCHSREENA i ladnosci wyswietlacza!!!////
+	
+zeby obrocic ekran:
+	cd LCD-show/
+	./LCD101-1024x600-show 270	
+	
+	/////////////////////////////////////
+	
+	
+	stworzenie projektu:
+	
+Go to Options -> Devices
+  Add
+    Generic Linux Device
+    Enter IP address, user & password
+    Finish	
+	
+Go to Options -> Compilers
+  Add
+    GCC
+    Compiler path: ~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-g++
+	
+Go to Options -> Debuggers
+  Add
+    ~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-gdb
+	
+Go to Options -> Qt Versions
+  Check if an entry with ~/raspi/qt5/bin/qmake shows up. If not, add it.
+  
+Go to Options -> Build & Run
+	Kits
+		Add
+		  Generic Linux Device
+		  Device: the one we just created
+		  Sysroot: ~/raspi/sysroot
+		  Compiler: the one we just created
+		  Debugger: the one we just created
+		  Qt version: the one we saw under Qt Versions
+		  Qt mkspec: leave empty
+		  
+Linux host:
+
+	sudo apt-get install libgl1-mesa-dev
+Jezeli to nie pomoże, to zainstaluj następne:
+
+	sudo apt-get install libpulse-dev
+	sudo apt-get install x11proto-xext-dev
+	sudo apt-get install libxext-dev
+
+
+
+	
+triki:
+wszystki procesy od "pi"
+	ps -ef | grep pi 
+	
+zabij proces 
+	kill -9 PID
+
+
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,25 @@
+
+ifconfig
+ex: ifconfig eth0 192.168.1.69 netmask 255.255.255.0
+route add default gw 192.168.1.1
+
+kuchnia: 	192.169.1.12/24
+salon:		192.168.1.56/24
+router:		192.168.1.1/24 - default gateway
+monitor:	192.168.1.44/24
+
+sudo router -n
+ip route show
+
+ssh-keygen 
+ssh-copy-id 
+pi@192.168.1.20 
+ssh pi@192.168.1.20
+
+sudo shutdown -h now 	//shutdown
+sudo shutdown -r now	// reboot
+
+
+//ile zajmuje qt:
+bylo 4.87GB
+po sciagnieciu: 

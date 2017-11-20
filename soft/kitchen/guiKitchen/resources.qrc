@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>bowl.obj</file>
+        <file>bowl.c4d</file>
+        <file>3dprinttempfile.obj</file>
+        <file>3dprinttempfile.mtl</file>
+        <file>ovenrack.JPG</file>
+        <file>plate3d.png</file>
+    </qresource>
+</RCC>
