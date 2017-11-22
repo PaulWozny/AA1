@@ -57,7 +57,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(810, 650);
+        MainWindow->resize(600, 1024);
+        MainWindow->setMinimumSize(QSize(600, 1024));
+        MainWindow->setMaximumSize(QSize(600, 1024));
         MainWindow->setStyleSheet(QLatin1String("background-color: rgb(238, 238, 236);\n"
 "border-color: rgb(211, 215, 207);"));
         centralWidget = new QWidget(MainWindow);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.4.1, 2017-11-20T15:37:36. -->
+<!-- Written by QtCreator 4.4.1, 2017-11-22T21:37:58. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -8,7 +8,7 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
-  <value type="int">0</value>
+  <value type="int">1</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.EditorSettings</variable>
@@ -310,7 +310,7 @@
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">guiRestaurant.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">/home/pawel/winda/soft/restaurant/build-guiRestaurant-Desktop_Qt_5_9_2_GCC_64bit-Debug</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">/home/pawel/Downloads/winda (1)/soft/restaurant/ver1/build-guiRestaurant-Clone_of_Rpi3_kit-Release</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -391,7 +391,7 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pawel/Downloads/winda (1)/soft/restaurant/ver1/build-guiRestaurant-Clone_of_Rpi3_kit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pawel/winda/soft/restaurant/guiRestaurant</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -532,22 +532,27 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
+       <value type="QString">/home/pawel/Downloads/winda (1)/soft/restaurant/ver1/build-guiRestaurant-Clone_of_Rpi3_kit-Release/guiRestaurant</value>
        <value type="QString">/home/pawel/Downloads/winda (1)/soft/restaurant/ver1/guiRestaurant/guiRestaurant</value>
        <value type="QString">/home/pawel/Downloads/winda (1)/soft/restaurant/ver1/build-guiRestaurant-Clone_of_Rpi3_kit-Release/guiRestaurant</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
+       <value type="QString">192.168.1.156</value>
        <value type="QString">192.168.1.69</value>
        <value type="QString">192.168.1.69</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/home/pi</value>
        <value type="QString">/home/pi</value>
+       <value type="QString">/home/pi</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
        <value type="QString">/home/pawel/raspi/sysroot</value>
        <value type="QString">/home/pawel/raspi/sysroot</value>
+       <value type="QString">/home/pawel/raspi/sysroot</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedTimes">
+       <value type="QDateTime">2017-11-22T21:33:22</value>
        <value type="QDateTime">2017-11-14T19:26:36</value>
        <value type="QDateTime">2017-11-15T22:47:38</value>
       </valuelist>

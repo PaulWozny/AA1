@@ -27,162 +27,75 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QGridLayout *gridLayout;
-    QGroupBox *groupBox_upper;
+    QGridLayout *gridLayout_2;
+    QGroupBox *groupBox_middle;
+    QGridLayout *gridLayout_3;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_7;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_bell;
+    QPushButton *pushButton_middleHeater;
+    QGroupBox *groupBox_lower;
     QGridLayout *gridLayout_4;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_upperHeater;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_1;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_down;
+    QPushButton *pushButton_lowerHeater;
+    QLabel *label;
+    QGroupBox *groupBox_upper;
+    QGridLayout *gridLayout;
     QPushButton *pushButton_9;
     QPushButton *pushButton_10;
+    QPushButton *pushButton_upperHeater;
+    QPushButton *pushButton_11;
+    QPushButton *pushButton_12;
     QPushButton *pushButton_up;
-    QGroupBox *groupBox_middle;
-    QGridLayout *gridLayout_2;
-    QPushButton *pushButton_middleHeater;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_bell;
-    QGroupBox *groupBox_lower;
-    QGridLayout *gridLayout_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_1;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_lowerHeater;
-    QPushButton *pushButton_down;
-    QLabel *label;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(600, 689);
-        MainWindow->setMaximumSize(QSize(600, 1250));
-        MainWindow->setStyleSheet(QLatin1String("QMainWindow{\n"
-"	background-color: rgb(255, 255, 255);\n"
-"}"));
+        MainWindow->resize(600, 1024);
+        MainWindow->setMinimumSize(QSize(600, 1024));
+        MainWindow->setMaximumSize(QSize(600, 1024));
+        MainWindow->setStyleSheet(QLatin1String("background-color: rgb(238, 238, 236);\n"
+""));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        gridLayout = new QGridLayout(centralWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        groupBox_upper = new QGroupBox(centralWidget);
-        groupBox_upper->setObjectName(QStringLiteral("groupBox_upper"));
-        gridLayout_4 = new QGridLayout(groupBox_upper);
-        gridLayout_4->setSpacing(6);
-        gridLayout_4->setContentsMargins(11, 11, 11, 11);
-        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-        pushButton_11 = new QPushButton(groupBox_upper);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
-        pushButton_11->setSizePolicy(sizePolicy);
-        pushButton_11->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_4->addWidget(pushButton_11, 0, 0, 1, 1);
-
-        pushButton_12 = new QPushButton(groupBox_upper);
-        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
-        sizePolicy.setHeightForWidth(pushButton_12->sizePolicy().hasHeightForWidth());
-        pushButton_12->setSizePolicy(sizePolicy);
-        pushButton_12->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_4->addWidget(pushButton_12, 0, 1, 1, 1);
-
-        pushButton_upperHeater = new QPushButton(groupBox_upper);
-        pushButton_upperHeater->setObjectName(QStringLiteral("pushButton_upperHeater"));
-        sizePolicy.setHeightForWidth(pushButton_upperHeater->sizePolicy().hasHeightForWidth());
-        pushButton_upperHeater->setSizePolicy(sizePolicy);
-
-        gridLayout_4->addWidget(pushButton_upperHeater, 0, 2, 1, 1);
-
-        pushButton_9 = new QPushButton(groupBox_upper);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy);
-        pushButton_9->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_4->addWidget(pushButton_9, 1, 0, 1, 1);
-
-        pushButton_10 = new QPushButton(groupBox_upper);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
-        pushButton_10->setSizePolicy(sizePolicy);
-        pushButton_10->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_4->addWidget(pushButton_10, 1, 1, 1, 1);
-
-
-        gridLayout->addWidget(groupBox_upper, 0, 0, 1, 1);
-
-        pushButton_up = new QPushButton(centralWidget);
-        pushButton_up->setObjectName(QStringLiteral("pushButton_up"));
-        sizePolicy.setHeightForWidth(pushButton_up->sizePolicy().hasHeightForWidth());
-        pushButton_up->setSizePolicy(sizePolicy);
-
-        gridLayout->addWidget(pushButton_up, 0, 1, 1, 1);
-
-        groupBox_middle = new QGroupBox(centralWidget);
-        groupBox_middle->setObjectName(QStringLiteral("groupBox_middle"));
-        gridLayout_2 = new QGridLayout(groupBox_middle);
+        gridLayout_2 = new QGridLayout(centralWidget);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        pushButton_middleHeater = new QPushButton(groupBox_middle);
-        pushButton_middleHeater->setObjectName(QStringLiteral("pushButton_middleHeater"));
-        sizePolicy.setHeightForWidth(pushButton_middleHeater->sizePolicy().hasHeightForWidth());
-        pushButton_middleHeater->setSizePolicy(sizePolicy);
+        groupBox_middle = new QGroupBox(centralWidget);
+        groupBox_middle->setObjectName(QStringLiteral("groupBox_middle"));
+        gridLayout_3 = new QGridLayout(groupBox_middle);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        pushButton_5 = new QPushButton(groupBox_middle);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
+        pushButton_5->setSizePolicy(sizePolicy);
+        pushButton_5->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 80px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
-        gridLayout_2->addWidget(pushButton_middleHeater, 0, 2, 2, 1);
+        gridLayout_3->addWidget(pushButton_5, 1, 1, 1, 1);
 
         pushButton_7 = new QPushButton(groupBox_middle);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
@@ -201,45 +114,7 @@ public:
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "}"));
 
-        gridLayout_2->addWidget(pushButton_7, 0, 0, 1, 1);
-
-        pushButton_8 = new QPushButton(groupBox_middle);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy);
-        pushButton_8->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_2->addWidget(pushButton_8, 0, 1, 1, 1);
-
-        pushButton_5 = new QPushButton(groupBox_middle);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        sizePolicy.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
-        pushButton_5->setSizePolicy(sizePolicy);
-        pushButton_5->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_2->addWidget(pushButton_5, 1, 0, 1, 1);
+        gridLayout_3->addWidget(pushButton_7, 0, 1, 1, 1);
 
         pushButton_6 = new QPushButton(groupBox_middle);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
@@ -258,24 +133,92 @@ public:
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "}"));
 
-        gridLayout_2->addWidget(pushButton_6, 1, 1, 1, 1);
+        gridLayout_3->addWidget(pushButton_6, 1, 2, 1, 1);
 
+        pushButton_8 = new QPushButton(groupBox_middle);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
+        pushButton_8->setSizePolicy(sizePolicy);
+        pushButton_8->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 80px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
-        gridLayout->addWidget(groupBox_middle, 1, 0, 1, 1);
+        gridLayout_3->addWidget(pushButton_8, 0, 2, 1, 1);
 
-        pushButton_bell = new QPushButton(centralWidget);
+        pushButton_bell = new QPushButton(groupBox_middle);
         pushButton_bell->setObjectName(QStringLiteral("pushButton_bell"));
         sizePolicy.setHeightForWidth(pushButton_bell->sizePolicy().hasHeightForWidth());
         pushButton_bell->setSizePolicy(sizePolicy);
+        pushButton_bell->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 25px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
-        gridLayout->addWidget(pushButton_bell, 1, 1, 1, 1);
+        gridLayout_3->addWidget(pushButton_bell, 0, 4, 1, 1);
+
+        pushButton_middleHeater = new QPushButton(groupBox_middle);
+        pushButton_middleHeater->setObjectName(QStringLiteral("pushButton_middleHeater"));
+        sizePolicy.setHeightForWidth(pushButton_middleHeater->sizePolicy().hasHeightForWidth());
+        pushButton_middleHeater->setSizePolicy(sizePolicy);
+        pushButton_middleHeater->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 40px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 80px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout_3->addWidget(pushButton_middleHeater, 1, 4, 1, 1);
+
+
+        gridLayout_2->addWidget(groupBox_middle, 1, 0, 1, 1);
 
         groupBox_lower = new QGroupBox(centralWidget);
         groupBox_lower->setObjectName(QStringLiteral("groupBox_lower"));
-        gridLayout_3 = new QGridLayout(groupBox_lower);
-        gridLayout_3->setSpacing(6);
-        gridLayout_3->setContentsMargins(11, 11, 11, 11);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_4 = new QGridLayout(groupBox_lower);
+        gridLayout_4->setSpacing(6);
+        gridLayout_4->setContentsMargins(11, 11, 11, 11);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        pushButton_2 = new QPushButton(groupBox_lower);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy);
+        pushButton_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 80px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout_4->addWidget(pushButton_2, 1, 2, 1, 1);
+
         pushButton_4 = new QPushButton(groupBox_lower);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
@@ -293,26 +236,7 @@ public:
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "}"));
 
-        gridLayout_3->addWidget(pushButton_4, 0, 1, 1, 1);
-
-        pushButton_3 = new QPushButton(groupBox_lower);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy);
-        pushButton_3->setStyleSheet(QLatin1String("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
-"    border-radius: 6px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
-"    min-width: 80px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"}"));
-
-        gridLayout_3->addWidget(pushButton_3, 0, 0, 1, 1);
+        gridLayout_4->addWidget(pushButton_4, 0, 2, 1, 1);
 
         pushButton_1 = new QPushButton(groupBox_lower);
         pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
@@ -331,13 +255,13 @@ public:
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "}"));
 
-        gridLayout_3->addWidget(pushButton_1, 1, 0, 1, 1);
+        gridLayout_4->addWidget(pushButton_1, 1, 1, 1, 1);
 
-        pushButton_2 = new QPushButton(groupBox_lower);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy);
-        pushButton_2->setStyleSheet(QLatin1String("QPushButton {\n"
+        pushButton_3 = new QPushButton(groupBox_lower);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy);
+        pushButton_3->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 2px solid #8f8f91;\n"
 "    border-radius: 6px;\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -350,24 +274,47 @@ public:
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "}"));
 
-        gridLayout_3->addWidget(pushButton_2, 1, 1, 1, 1);
+        gridLayout_4->addWidget(pushButton_3, 0, 1, 1, 1);
+
+        pushButton_down = new QPushButton(groupBox_lower);
+        pushButton_down->setObjectName(QStringLiteral("pushButton_down"));
+        sizePolicy.setHeightForWidth(pushButton_down->sizePolicy().hasHeightForWidth());
+        pushButton_down->setSizePolicy(sizePolicy);
+        pushButton_down->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 25px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout_4->addWidget(pushButton_down, 0, 3, 1, 1);
 
         pushButton_lowerHeater = new QPushButton(groupBox_lower);
         pushButton_lowerHeater->setObjectName(QStringLiteral("pushButton_lowerHeater"));
         sizePolicy.setHeightForWidth(pushButton_lowerHeater->sizePolicy().hasHeightForWidth());
         pushButton_lowerHeater->setSizePolicy(sizePolicy);
+        pushButton_lowerHeater->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 40px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 80px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
-        gridLayout_3->addWidget(pushButton_lowerHeater, 0, 2, 2, 1);
+        gridLayout_4->addWidget(pushButton_lowerHeater, 1, 3, 1, 1);
 
 
-        gridLayout->addWidget(groupBox_lower, 2, 0, 1, 1);
-
-        pushButton_down = new QPushButton(centralWidget);
-        pushButton_down->setObjectName(QStringLiteral("pushButton_down"));
-        sizePolicy.setHeightForWidth(pushButton_down->sizePolicy().hasHeightForWidth());
-        pushButton_down->setSizePolicy(sizePolicy);
-
-        gridLayout->addWidget(pushButton_down, 2, 1, 1, 1);
+        gridLayout_2->addWidget(groupBox_lower, 2, 0, 1, 1);
 
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
@@ -377,7 +324,128 @@ public:
         sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy1);
 
-        gridLayout->addWidget(label, 3, 0, 1, 1);
+        gridLayout_2->addWidget(label, 3, 0, 1, 1);
+
+        groupBox_upper = new QGroupBox(centralWidget);
+        groupBox_upper->setObjectName(QStringLiteral("groupBox_upper"));
+        gridLayout = new QGridLayout(groupBox_upper);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        pushButton_9 = new QPushButton(groupBox_upper);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
+        pushButton_9->setSizePolicy(sizePolicy);
+        pushButton_9->setStyleSheet(QLatin1String("QPushButton {\n"
+"	font: 48pt \"Ubuntu\";\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 60px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_9, 2, 0, 1, 1);
+
+        pushButton_10 = new QPushButton(groupBox_upper);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+        sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
+        pushButton_10->setSizePolicy(sizePolicy);
+        pushButton_10->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 60px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_10, 2, 2, 1, 1);
+
+        pushButton_upperHeater = new QPushButton(groupBox_upper);
+        pushButton_upperHeater->setObjectName(QStringLiteral("pushButton_upperHeater"));
+        sizePolicy.setHeightForWidth(pushButton_upperHeater->sizePolicy().hasHeightForWidth());
+        pushButton_upperHeater->setSizePolicy(sizePolicy);
+        pushButton_upperHeater->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 40px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 80px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_upperHeater, 2, 4, 1, 1);
+
+        pushButton_11 = new QPushButton(groupBox_upper);
+        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
+        sizePolicy.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
+        pushButton_11->setSizePolicy(sizePolicy);
+        pushButton_11->setMinimumSize(QSize(0, 0));
+        pushButton_11->setStyleSheet(QLatin1String("QPushButton {\n"
+"	font: 20pt \"Ubuntu\";\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 60px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_11, 0, 0, 1, 1);
+
+        pushButton_12 = new QPushButton(groupBox_upper);
+        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
+        sizePolicy.setHeightForWidth(pushButton_12->sizePolicy().hasHeightForWidth());
+        pushButton_12->setSizePolicy(sizePolicy);
+        pushButton_12->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 60px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_12, 0, 2, 1, 1);
+
+        pushButton_up = new QPushButton(groupBox_upper);
+        pushButton_up->setObjectName(QStringLiteral("pushButton_up"));
+        sizePolicy.setHeightForWidth(pushButton_up->sizePolicy().hasHeightForWidth());
+        pushButton_up->setSizePolicy(sizePolicy);
+        pushButton_up->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 25px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_up, 0, 4, 1, 1);
+
+
+        gridLayout_2->addWidget(groupBox_upper, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
 
@@ -389,28 +457,28 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "kuchnia", Q_NULLPTR));
+        groupBox_middle->setTitle(QApplication::translate("MainWindow", "Polka srodkowa", Q_NULLPTR));
+        pushButton_5->setText(QString());
+        pushButton_7->setText(QString());
+        pushButton_6->setText(QString());
+        pushButton_8->setText(QString());
+        pushButton_bell->setText(QApplication::translate("MainWindow", "Alarm", Q_NULLPTR));
+        pushButton_middleHeater->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        groupBox_lower->setTitle(QApplication::translate("MainWindow", "Polka dolna", Q_NULLPTR));
+        pushButton_2->setText(QString());
+        pushButton_4->setText(QString());
+        pushButton_1->setText(QString());
+        pushButton_3->setText(QString());
+        pushButton_down->setText(QApplication::translate("MainWindow", "Down", Q_NULLPTR));
+        pushButton_lowerHeater->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Kitchen - server 192.168.1.156", Q_NULLPTR));
         groupBox_upper->setTitle(QApplication::translate("MainWindow", "Polka gorna:", Q_NULLPTR));
-        pushButton_11->setText(QString());
-        pushButton_12->setText(QString());
-        pushButton_upperHeater->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
         pushButton_9->setText(QString());
         pushButton_10->setText(QString());
-        pushButton_up->setText(QApplication::translate("MainWindow", "nacisnij mnie", Q_NULLPTR));
-        groupBox_middle->setTitle(QApplication::translate("MainWindow", "Polka srodkowa", Q_NULLPTR));
-        pushButton_middleHeater->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_7->setText(QString());
-        pushButton_8->setText(QString());
-        pushButton_5->setText(QString());
-        pushButton_6->setText(QString());
-        pushButton_bell->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        groupBox_lower->setTitle(QApplication::translate("MainWindow", "Polka dolna", Q_NULLPTR));
-        pushButton_4->setText(QString());
-        pushButton_3->setText(QString());
-        pushButton_1->setText(QString());
-        pushButton_2->setText(QString());
-        pushButton_lowerHeater->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_down->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "Kitchen - server 192.168.1.156", Q_NULLPTR));
+        pushButton_upperHeater->setText(QApplication::translate("MainWindow", "Heater", Q_NULLPTR));
+        pushButton_11->setText(QString());
+        pushButton_12->setText(QString());
+        pushButton_up->setText(QApplication::translate("MainWindow", "UP", Q_NULLPTR));
     } // retranslateUi
 
 };

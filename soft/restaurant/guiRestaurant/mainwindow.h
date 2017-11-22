@@ -30,6 +30,8 @@ private:
     QTcpSocket tcpClientRestaurant;
     QTcpSocket *tcpClientConnection;
     QString cleartext;
+    QString numberClearR;
+    QString numberClearsendR;
 
     keypadR *myKpad;
     QString buttonName;

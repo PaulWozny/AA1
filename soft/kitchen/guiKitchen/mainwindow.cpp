@@ -64,7 +64,25 @@ void MainWindow::displayKeypad(){
 
     //Option dialog
        QMessageBox msgBoxK;
-       msgBoxK.setInformativeText("Do you want send plate or get returned plate?");
+       //msgBoxK.setBaseSize(QSize(500,400));
+       msgBoxK.setStyleSheet(
+                   "QPushButton {"
+                   " background-color: silver;"
+                   " border-style: outset;"
+                   " border-width: 2px;"
+                   " border-radius: 10px;"
+                   " border-color: beige;"
+                   " font: bold 16px;"
+                   " min-width: 10em;"
+                   " max-width: 15em;"
+                   " min-height: 10em;"
+                   " padding: 6px;"
+
+                   "}"
+
+
+                   );
+       msgBoxK.setInformativeText("<center>Do you want send plate or get returned plate?");
        QPushButton *closebutton =msgBoxK.addButton(QMessageBox::Close);
        QPushButton *returnedPlate = msgBoxK.addButton("Get Returned Plate",QMessageBox::NoRole);
        QPushButton *sendPLate = msgBoxK.addButton("Send Plate",QMessageBox::YesRole);
@@ -130,12 +148,29 @@ void MainWindow::socketReciveData(){
     QString dataRead = tcpServerConnection->readAll();
     qDebug () << dataRead;
     QStringList dataReadList = dataRead.split(',');
-    if (dataReadList[1] == '\0')
-        qDebug() << "nie został wcisniety numer stolika";
-     else
-        buttonChangedTextfromR = MainWindow::findChild<QPushButton *>(dataReadList[0]);
-//changing displayed text
-        buttonChangedTextfromR->setText(dataReadList[1]);
+//    if (dataReadList[1] == '\0')
+//        qDebug() << "nie został wcisniety numer stolika";
+//     else
+//        buttonChangedTextfromR = MainWindow::findChild<QPushButton *>(dataReadList[0]);
+////changing displayed text
+//        buttonChangedTextfromR->setText(dataReadList[1]);
+
+        if (dataReadList[1] == '\0')
+               {
+               qDebug() << "nie został wcisniety numer stolika" <<dataReadList;
+               }
+            else if (dataReadList[1] == "clearbutton")
+               {qDebug() <<"wwww";
+                buttonChangedTextfromR = MainWindow::findChild<QPushButton *>(dataReadList[0]);
+                cleartext.clear();
+                buttonChangedTextfromR->setText(cleartext);
+               }
+            else
+                    {
+                    buttonChangedTextfromR = MainWindow::findChild<QPushButton *>(dataReadList[0]);
+        //changing displayed text
+                    buttonChangedTextfromR->setText(dataReadList[1]);
+                    }
 }
 
 void MainWindow::socketDisplayError(QAbstractSocket::SocketError socketError){

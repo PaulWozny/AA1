@@ -73,11 +73,22 @@ this->buttonName = ((QPushButton*) sender())->objectName();
    msgBox.exec();
         if (msgBox.clickedButton() == getPLate)
         {
-            tableNumberR.clear();
-            QPushButton *buttonChangedText = MainWindow::findChild<QPushButton *>(this->buttonName);
-            buttonChangedText->setText(tableNumberR);
-            connect(this,SIGNAL(SendKpadClear(QString)),this,SLOT(startTransfer(QString)));
-            emit SendKpadClear(tableNumberR);
+            //tableNumberR.clear();
+           // QPushButton *buttonChangedText = MainWindow::findChild<QPushButton *>(this->buttonName);
+            //buttonChangedText->setText(tableNumberR);
+            //connect(this,SIGNAL(SendKpadClear(QString)),this,SLOT(startTransfer(QString)));
+           // emit SendKpadClear(tableNumberR);
+
+            QPushButton *buttonChangedTextfromK = MainWindow::findChild<QPushButton*>(this->buttonName);
+            numberClearR.clear();
+            buttonChangedTextfromK->setText(numberClearR);
+
+           //connect(this,SIGNAL(SendKpadClear(QString)),this,SLOT(receiveNameNumber(QString)));
+
+           numberClearsendR = QString("clearbutton");
+           QByteArray data2sendR = this->buttonName.toLatin1() + "," + numberClearsendR.toLatin1();
+           //tcpServerConnection->write(data2send);
+           tcpClientRestaurant.write(data2sendR);
 
         }
         else if (msgBox.clickedButton() == returnPlate)

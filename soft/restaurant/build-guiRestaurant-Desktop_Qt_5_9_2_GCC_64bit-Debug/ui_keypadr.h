@@ -54,6 +54,8 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         lcdDisplay = new QLCDNumber(keypadR);
         lcdDisplay->setObjectName(QStringLiteral("lcdDisplay"));
+        lcdDisplay->setMinimumSize(QSize(600, 0));
+        lcdDisplay->setMaximumSize(QSize(600, 16777215));
 
         verticalLayout->addWidget(lcdDisplay);
 
@@ -66,6 +68,17 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(pushButton_num_6->sizePolicy().hasHeightForWidth());
         pushButton_num_6->setSizePolicy(sizePolicy);
+        pushButton_num_6->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_6, 1, 2, 1, 1);
 
@@ -73,6 +86,17 @@ public:
         pushButton_num_3->setObjectName(QStringLiteral("pushButton_num_3"));
         sizePolicy.setHeightForWidth(pushButton_num_3->sizePolicy().hasHeightForWidth());
         pushButton_num_3->setSizePolicy(sizePolicy);
+        pushButton_num_3->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_3, 2, 2, 1, 1);
 
@@ -80,6 +104,17 @@ public:
         pushButton_clear->setObjectName(QStringLiteral("pushButton_clear"));
         sizePolicy.setHeightForWidth(pushButton_clear->sizePolicy().hasHeightForWidth());
         pushButton_clear->setSizePolicy(sizePolicy);
+        pushButton_clear->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_clear, 3, 0, 1, 1);
 
@@ -90,6 +125,17 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(pushButton_enter->sizePolicy().hasHeightForWidth());
         pushButton_enter->setSizePolicy(sizePolicy1);
+        pushButton_enter->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_enter, 0, 3, 4, 1);
 
@@ -97,6 +143,17 @@ public:
         pushButton_num_5->setObjectName(QStringLiteral("pushButton_num_5"));
         sizePolicy.setHeightForWidth(pushButton_num_5->sizePolicy().hasHeightForWidth());
         pushButton_num_5->setSizePolicy(sizePolicy);
+        pushButton_num_5->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_5, 1, 1, 1, 1);
 
@@ -104,6 +161,17 @@ public:
         pushButton_num_0->setObjectName(QStringLiteral("pushButton_num_0"));
         sizePolicy.setHeightForWidth(pushButton_num_0->sizePolicy().hasHeightForWidth());
         pushButton_num_0->setSizePolicy(sizePolicy);
+        pushButton_num_0->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_0, 3, 1, 1, 1);
 
@@ -111,6 +179,17 @@ public:
         pushButton_num_9->setObjectName(QStringLiteral("pushButton_num_9"));
         sizePolicy.setHeightForWidth(pushButton_num_9->sizePolicy().hasHeightForWidth());
         pushButton_num_9->setSizePolicy(sizePolicy);
+        pushButton_num_9->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_9, 0, 2, 1, 1);
 
@@ -118,6 +197,17 @@ public:
         pushButton_num_1->setObjectName(QStringLiteral("pushButton_num_1"));
         sizePolicy.setHeightForWidth(pushButton_num_1->sizePolicy().hasHeightForWidth());
         pushButton_num_1->setSizePolicy(sizePolicy);
+        pushButton_num_1->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_1, 2, 0, 1, 1);
 
@@ -125,6 +215,17 @@ public:
         pushButton_num_2->setObjectName(QStringLiteral("pushButton_num_2"));
         sizePolicy.setHeightForWidth(pushButton_num_2->sizePolicy().hasHeightForWidth());
         pushButton_num_2->setSizePolicy(sizePolicy);
+        pushButton_num_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_2, 2, 1, 1, 1);
 
@@ -132,6 +233,17 @@ public:
         pushButton_num_7->setObjectName(QStringLiteral("pushButton_num_7"));
         sizePolicy.setHeightForWidth(pushButton_num_7->sizePolicy().hasHeightForWidth());
         pushButton_num_7->setSizePolicy(sizePolicy);
+        pushButton_num_7->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_7, 0, 0, 1, 1);
 
@@ -139,6 +251,17 @@ public:
         pushButton_num_4->setObjectName(QStringLiteral("pushButton_num_4"));
         sizePolicy.setHeightForWidth(pushButton_num_4->sizePolicy().hasHeightForWidth());
         pushButton_num_4->setSizePolicy(sizePolicy);
+        pushButton_num_4->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_4, 1, 0, 1, 1);
 
@@ -146,6 +269,17 @@ public:
         pushButton_close->setObjectName(QStringLiteral("pushButton_close"));
         sizePolicy.setHeightForWidth(pushButton_close->sizePolicy().hasHeightForWidth());
         pushButton_close->setSizePolicy(sizePolicy);
+        pushButton_close->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_close, 3, 2, 1, 1);
 
@@ -153,6 +287,17 @@ public:
         pushButton_num_8->setObjectName(QStringLiteral("pushButton_num_8"));
         sizePolicy.setHeightForWidth(pushButton_num_8->sizePolicy().hasHeightForWidth());
         pushButton_num_8->setSizePolicy(sizePolicy);
+        pushButton_num_8->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 2px solid #8f8f91;\n"
+"    border-radius: 6px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}"));
 
         gridLayout->addWidget(pushButton_num_8, 0, 1, 1, 1);
 

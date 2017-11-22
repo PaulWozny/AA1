@@ -40,6 +40,8 @@ private:
     QString tableNumberR;
     QString numberClear;
     QString numberClearsend;
+    QString cleartext;
+
     QTcpServer tcpServerKitchen;
     QTcpSocket *tcpServerConnection;
 
